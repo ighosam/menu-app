@@ -26,9 +26,10 @@ import {
 import { Input } from "@/components/ui/input"
 import {useSearchParams } from "next/navigation"
 import  router,{useRouter} from 'next/router'
+import { getAsString } from "@/myComponents/getstring"
 
-export  function SelectForm({make}:{make:string[]}) {
-make = make.sort()
+export  function SelectForm({makes}:{makes:string[]}) {
+makes = makes.sort()
 
 
 
@@ -98,7 +99,7 @@ console.log("Router is: ",search)
                 </FormControl>
                 <SelectContent>
                   {
-                    make.map(mk=><SelectItem value={mk} key={mk}>{mk}</SelectItem>)
+                    makes.map(mk=><SelectItem value={mk} key={mk}>{mk}</SelectItem>)
                   }
                   
                  {/*map function close here */} 
@@ -155,10 +156,4 @@ export const Mycomp = ()=>{
     <SelectItem value="m@example.com">m@example2.com</SelectItem>
   )
 }
-export const getAsString = ( value:string|string[]|undefined|null ):string =>{
- if(Array.isArray(value)){
-  return value[0]
- }
- return !value ? '':value
- 
-}
+

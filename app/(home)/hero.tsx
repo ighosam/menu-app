@@ -1,15 +1,13 @@
-
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import  {SelectForm} from './searchForm'
 import { getdb } from '@/components/opendb2'
 
 
-const make = await getdb()
+const makes = await getdb()
+
 const Hero = async () => {
   
-
-
   return (
     <div className="text-white w-full text-[20px]">
     <div className="flex justify-start w-full">
@@ -30,7 +28,7 @@ const Hero = async () => {
     </div>
 <div className="flex w-full h-full justify-center">
   <div className="rounded-2xl p-5 text-foreground">
-   <SelectForm make={make}/>
+   <SelectForm makes={makes}/>
 
 
   </div>
