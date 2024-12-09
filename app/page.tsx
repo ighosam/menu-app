@@ -1,14 +1,17 @@
 
 import Hero from "./(home)/hero";
+import { SelectForm } from "./(home)/searchForm";
 import Wrapper from '@/components/maxWidthWrapper/wrapper'
 import Features from "@/components/features";
 import EnergySearch from '@/components/energy_features'
 import Quicksearch from "@/components/quicksearch";
 import BuyTip from "@/components/buyTip";
 import { Separator } from "@/components/ui/separator"
+import { getdb } from "@/components/opendb2";
 
 
- 
+const makes = await getdb()
+
 export default async function Home() {
 
 
@@ -18,11 +21,14 @@ export default async function Home() {
       <Wrapper>
     <Hero />
       </Wrapper>
-
     </section >
+  
     <section >
     <Wrapper >
+      <div className="flex-row">
+    <SelectForm makes={makes} />
     <Features />
+</div>
     </Wrapper >
     
     <Wrapper>

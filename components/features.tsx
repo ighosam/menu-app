@@ -64,7 +64,7 @@ const qsearch= [
   },
 ]
 
-const features = () => {
+const Features = () => {
   return (
    <div className="xl:mx-[180px] flex flex-col justify-items-center mt-10">
     <h2 className="text-2xl mb-1 p-1">Quick search:</h2>
@@ -83,4 +83,4 @@ const features = () => {
   )
 }
 
-export default features
+export default Features
