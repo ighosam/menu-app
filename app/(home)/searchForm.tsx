@@ -25,19 +25,26 @@ import {
 } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import {useSearchParams } from "next/navigation"
-import  router,{useRouter} from 'next/router'
+import  {useRouter} from 'next/navigation'
 import { getAsString } from "@/myComponents/getstring"
+import { formFetch } from "@/myComponents/service"
+import useSWR from 'swr'
+import { useState } from "react"
+
 
 export  function SelectForm({makes}:{makes:string[]}) {
 makes = makes.sort()
 
+//let modelse
 
 
-//const router = useRouter()
+const router = useRouter()
 const searchParams= useSearchParams()
-const search = searchParams.get('make')
+ /* const model = searchParams.get('model') */
+const [make, setMake] = useState(searchParams.get('make'))
+const [model,setModel]= useState(searchParams.get('model'))
 
-
+ 
 const FormSchema = z.object({
   make: z.string({
       required_error: "Please select an email to display.",
@@ -48,17 +55,33 @@ const FormSchema = z.object({
 })
 
 
-console.log("Router is: ",search)
+console.log("Router is: ",make)
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues:{
-      make:getAsString(search),
-      model:'',
+      make: getAsString(make),
+      model: getAsString(model),
       location:''
 
     }
   })
+
+  console.log("Make is : ",make)
+  let models = useSWR(`/api/models?make=${make}`,formFetch,
+    {
+     onSuccess:()=>{
+    
+     }
+  })
+//check for the initial value for make and set it to 'All' if it is null
+  if(make==null){
+    form.setValue('make','All')
+  }
+//check for the initial value for model and set it to 'All' if it is null
+  if(model==null){
+    form.setValue('model','All')
+  }
  
   function onSubmit(data: z.infer<typeof FormSchema>) {
 
@@ -71,6 +94,7 @@ console.log("Router is: ",search)
       ),
     })
     
+    /*
    console.log("hello submit",router.query.make)
   
     typeof window !== 'undefined' &&
@@ -79,6 +103,9 @@ console.log("Router is: ",search)
         query:data
       }, undefined, {shallow:false}
     ) 
+    */
+    
+   router.push('/search?make=Acura')
     
   }
  
@@ -89,15 +116,26 @@ console.log("Router is: ",search)
         <FormField 
           control={form.control}
           name="make"
-          render={({ field }) => (
+          render={({field }) => (
             <FormItem className="lg:w-[200px] w-[80vw] pl-6 lg:pl-0 mr-3 mt-6">
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select onValueChange={
+              (value)=> {
+                setMake(value)
+                setModel('All') //set model to empty string to reset model field
+                
+                form.setValue('make',value)
+                field.onChange
+              } 
+              } 
+              value={make != (undefined)?make:'All'}
+              defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Make" />
+                    <SelectValue placeholder="All Make" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
+                <SelectItem value='All'>All Makes</SelectItem>
                   {
                     makes.map(mk=><SelectItem value={mk} key={mk}>{mk}</SelectItem>)
                   }
@@ -115,16 +153,29 @@ console.log("Router is: ",search)
           name="model"
           render={({ field }) => (
             <FormItem className="lg:w-[200px] w-[80vw] pl-6 lg:pl-0 mr-3">
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select onValueChange={
+                (value)=>{
+                  setModel(value)
+                 form.setValue('model',value)
+                 
+                 
+                }
+                
+              } 
+               value={ model != null ? model: ''}
+              defaultValue={field.value}
+              disabled={models.data?.length == 0}
+              >
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Model" />
+                    <SelectValue placeholder='All Model' />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="m@example.com">m@example.com</SelectItem>
-                  <SelectItem value="m@google.com">m@google.com</SelectItem>
-                  <SelectItem value="m@support.com">m@support.com</SelectItem>
+                <SelectItem value='All'>All Models</SelectItem>
+                {
+                  models.data && ( models.data.map(mk=><SelectItem value={mk} key={mk}>{mk}</SelectItem>))
+                  }
              
                 </SelectContent>
               </Select>

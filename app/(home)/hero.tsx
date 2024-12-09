@@ -1,12 +1,16 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import  {SelectForm} from './searchForm'
-import { getdb } from '@/components/opendb2'
+import { getdb, getModel} from '@/components/opendb2'
+import { NextRequest} from 'next/server'
 
 
 const makes = await getdb()
 
 const Hero = async () => {
+
+
+
   
   return (
     <div className="text-white w-full text-[20px]">
