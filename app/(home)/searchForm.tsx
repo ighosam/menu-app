@@ -30,21 +30,21 @@ import { getAsString } from "@/myComponents/getstring"
 import { formFetch } from "@/myComponents/service"
 import useSWR from 'swr'
 import { useState } from "react"
-
+import { usePathname } from 'next/navigation'
+import { cn } from "@/lib/utils"
 
 export  function SelectForm({makes}:{makes:string[]}) {
 makes = makes.sort()
 
-//let modelse
-
 
 const router = useRouter()
+const pathname = usePathname()
 const searchParams= useSearchParams()
  /* const model = searchParams.get('model') */
 const [make, setMake] = useState(searchParams.get('make'))
 const [model,setModel]= useState(searchParams.get('model'))
 
- 
+ console.log("Pathname is: ",pathname)
 const FormSchema = z.object({
   make: z.string({
       required_error: "Please select an email to display.",
@@ -111,8 +111,8 @@ console.log("Router is: ",make)
  
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="lg:w-3/3 space-y-6 flex
-      justify-center lg:flex-row flex-col">
+      <form onSubmit={form.handleSubmit(onSubmit)} 
+      className={cn('lg:w-3/3 space-y-6 flex justify-center lg:flex-row flex-col',{'lg:flex-col':pathname=='/search'} )}>
         <FormField 
           control={form.control}
           name="make"

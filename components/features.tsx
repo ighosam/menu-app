@@ -3,6 +3,8 @@ import Carcard from './carcard'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
+//This will perfom a search to the backend and display result. similar to searchform.
+
 const qsearch= [
   {
     title:"Wagon",
@@ -66,7 +68,7 @@ const qsearch= [
 
 const Features = () => {
   return (
-   <div className="xl:mx-[180px] flex flex-col justify-items-center mt-10">
+   <div className="xl:mx-[180px] flex flex-col justify-items-center ml-[700px] bg-green-400">
     <h2 className="text-2xl mb-1 p-1">Quick search:</h2>
     <h1 className="pl-[55px] text-muted-foreground sm:pl-[68px] ">Browse by energy source</h1>
     <div className="flex flex-wrap justify-center mt-5 gap-5">

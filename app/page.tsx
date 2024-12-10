@@ -1,20 +1,14 @@
 
 import Hero from "./(home)/hero";
-import { SelectForm } from "./(home)/searchForm";
 import Wrapper from '@/components/maxWidthWrapper/wrapper'
 import Features from "@/components/features";
 import EnergySearch from '@/components/energy_features'
 import Quicksearch from "@/components/quicksearch";
 import BuyTip from "@/components/buyTip";
 import { Separator } from "@/components/ui/separator"
-import { getdb } from "@/components/opendb2";
-
-
-const makes = await getdb()
+import { SearchForm } from "@/components/searchForm";
 
 export default async function Home() {
-
-
   return (
     <div className="bg-background">
     <section className="relative bg-background">
@@ -26,7 +20,7 @@ export default async function Home() {
     <section >
     <Wrapper >
       <div className="flex-row">
-    <SelectForm makes={makes} />
+    <SearchForm />
     <Features />
 </div>
     </Wrapper >
