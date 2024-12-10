@@ -43,6 +43,7 @@ const searchParams= useSearchParams()
  /* const model = searchParams.get('model') */
 const [make, setMake] = useState(searchParams.get('make'))
 const [model,setModel]= useState(searchParams.get('model'))
+const location = searchParams.get('location')
 
  console.log("Pathname is: ",pathname)
 const FormSchema = z.object({
@@ -62,7 +63,7 @@ console.log("Router is: ",make)
     defaultValues:{
       make: getAsString(make),
       model: getAsString(model),
-      location:''
+      location:getAsString(location)
 
     }
   })
@@ -84,6 +85,7 @@ console.log("Router is: ",make)
   }
  
   function onSubmit(data: z.infer<typeof FormSchema>) {
+  
 
     toast({
       title: "You submitted the following values:",
@@ -93,7 +95,7 @@ console.log("Router is: ",make)
         </pre>
       ),
     })
-    
+   
     /*
    console.log("hello submit",router.query.make)
   
@@ -104,8 +106,8 @@ console.log("Router is: ",make)
       }, undefined, {shallow:false}
     ) 
     */
-    
-   router.push('/search?make=Acura')
+    const queryString = new URLSearchParams(data).toString()
+    router.push(`/search?${queryString}`) 
     
   }
  
