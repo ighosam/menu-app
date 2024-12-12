@@ -19,10 +19,10 @@ export default async function Home() {
   
     <section >
     <Wrapper >
-      <div className="flex-row">
+        
     <SearchForm />
     <Features />
-</div>
+
     </Wrapper >
     
     <Wrapper>

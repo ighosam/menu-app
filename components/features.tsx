@@ -10,7 +10,7 @@ const qsearch= [
     title:"Wagon",
     img:<img src='../mycar3.png' className="hover:scale-105  w-[200px] min-w-[130px]"/>,
     className: "",
-    link:'/'
+    link:'/',
 
   },
   {
@@ -68,7 +68,7 @@ const qsearch= [
 
 const Features = () => {
   return (
-   <div className="xl:mx-[180px] flex flex-col justify-items-center ml-[700px]">
+   <div className="xl:mx-[180px] flex flex-col justify-items-center mt-10">
     <h2 className="text-2xl mb-1 p-1">Quick search:</h2>
     <h1 className="pl-[55px] text-muted-foreground sm:pl-[68px] ">Browse by energy source</h1>
     <div className="flex flex-wrap justify-center mt-5 gap-5">
