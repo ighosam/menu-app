@@ -13,7 +13,7 @@ const qsearch= [
     className: "",
     link:'/',
     price:'$0.00',
-    status:'sold',
+    car_status:'sold',
     owner:'dealer',
     engine_size: '4 cylinder',
     details:'More details about this vehicle'
@@ -25,7 +25,7 @@ const qsearch= [
     className: "",
     link:'/',
     price:'$21000.00',
-    status:'sold',
+    car_status:'sold',
     owner:'dealer',
     engine_size: '4 cylinder',
     details:'More details about this vehicle'
@@ -37,7 +37,7 @@ const qsearch= [
     className: "",
     link:'/',
     price:'$48000.00',
-    status:'sold',
+    car_status:'sold',
     owner:'dealer',
     engine_size: '6 cylinder',
     details:'More details about this vehicle'
@@ -50,7 +50,7 @@ const qsearch= [
     className: "",
     link:'/',
     price:'$12000.00',
-    status:'active',
+    car_status:'active',
     owner:'dealer',
     engine_size: '4 cylinder',
     details:'More details about this vehicle'
@@ -63,7 +63,7 @@ const qsearch= [
     className: "",
     link:'/',
     price:'$76000.00',
-    status:'active',
+    car_status:'active',
     owner:'dealer',
     engine_size: '4 cylinder',
     details:'More details about this vehicle'
@@ -75,7 +75,7 @@ const qsearch= [
     className: "",
     link:'/',
     price:'$7000.00',
-    status:'sold',
+    car_status:'sold',
     owner:'dealer',
     engine_size: '6 cylinder',
     details:'More details about this vehicle'
@@ -87,7 +87,7 @@ const qsearch= [
     className: "",
     link:'/',
     price:'$11000.00',
-    status:'active',
+    car_status:'active',
     owner:'dealer',
     engine_size: '4 cylinder',
     details:'More details about this vehicle'
@@ -98,11 +98,12 @@ const qsearch= [
     img:<img src='../mycar3.png'className="hover:scale-105 w-[200px] min-w-[130px]"/>,
     className: "",
     link:'/',
-    price:'$22000.00',
-    status:'sold',
+    price:'$11000.00',
+    car_status:'active',
     owner:'dealer',
     engine_size: '4 cylinder',
-    details:'More details about this vehicle'
+    details:'More details about this vehicle',
+    
 
   },
 ]
@@ -116,9 +117,16 @@ export const Displaylist = () => {
        {
         qsearch.map(qs=>(
          
-           <Displaycard title={qs.title} content={qs.img} link={qs.link}
-           className="text-wrap w-[700px]" description={qs.details}
-           key={qs.title}/>
+           <Displaycard 
+           title={qs.title} 
+           content={qs.img} 
+           link={qs.link}
+           description={qs.details}
+           price = {qs.price}
+           car_status ={qs.car_status}
+           owner = {qs.owner}
+           engine_size={qs.engine_size}
+           key={qs.title} className="text-wrap w-[700px]" />
         ))
        }   
     </div>

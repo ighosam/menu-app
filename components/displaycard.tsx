@@ -18,11 +18,16 @@ import {
     description?:string
     content?:ReactNode
     footer?:ReactNode,
-    link:string
+    link:string,
+    price:string,
+    car_status:string,
+    owner:string,
+    engine_size:string,
+
   }) => {
     return (
     <Link href={link}>
-      <Card className={cn("p-0 m-0",className)}>
+      <Card className={cn("p-0 m-0 flex",className)}>
       <CardContent className="sm:p-2 p-0">
        {content}
       </CardContent>
