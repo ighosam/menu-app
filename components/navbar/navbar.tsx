@@ -20,11 +20,11 @@ const Navbar = ({className}:{className?:string}) => {
   
   return (
     <section className="bg-background top-0 border-b-2 border-border">
-<Wrapper>
+<Wrapper >
   <div className={cn('flex justify-between items-center',className)}>
-   <Link href="/"> <Cash className="w-16 h-16 text-muted-foreground ml-3 md:ml-0" /></Link>
+   <Link href="/" > <Cash className="w-16 h-16 text-muted-foreground ml-3 md:ml-0" /></Link>
     <Navigation_menu />
-    <div className="flex justify-end">
+    <div className="flex justify-end" >
       <Post />
       <Sign />
       <Mobile />

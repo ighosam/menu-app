@@ -6,29 +6,26 @@ import Quicksearch from "@/components/quicksearch";
 import BuyTip from "@/components/buyTip";
 import { Separator } from "@/components/ui/separator"
 import { SearchForm } from "@/components/searchForm";
+import { Displaylist } from "@/components/displaylist";
+
 
 export default async function Home() {
   return (
     <div className="bg-background">
-    <section className="relative bg-background">
-      <Wrapper>
-    <Hero />
-      </Wrapper>
-    </section >
-  
-    <section >
-    <Wrapper >
-      <div className="flex flex-col w-full">
-        <div className="w-[30%] mt-0">
-       <SearchForm />   
+    <section className="m-auto justify-items-center">
+    <Wrapper className="w-[80%]">
+      <div className="lg:flex w-full lg:flex-row flex-col">
+        <div className="w-[20%] mt-0 mr-20 lg:block hidden">
+       <SearchForm  />   
         </div>
-        <div className="w-[50%] ml-20 -mt-52">
-          <Features />
-          </div>
-    
+        <div className="w-[60%] ml-0">
+          <Displaylist />
+          </div>    
 </div>
     </Wrapper >
-    
+ </section> 
+
+ <section>
     <Wrapper>
     <EnergySearch />
     </Wrapper>
@@ -46,8 +43,6 @@ export default async function Home() {
         <div className="flex-grow flex-1 m-10">
           <h1>Mentaining tips</h1>
         </div>
-   
-
         </div>
       </Wrapper>
       

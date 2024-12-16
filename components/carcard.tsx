@@ -12,7 +12,7 @@ import { Separator } from "@radix-ui/react-select"
 import React, { ReactNode } from 'react'
 import { cn } from "@/lib/utils"
 
-const carcard = ({className,title,description,content,footer,link}:{
+const carcard = ({className,title,content,footer,link,description}:{
   className?:string,
   title:string,
   description?:string
@@ -25,7 +25,7 @@ const carcard = ({className,title,description,content,footer,link}:{
     <Card className={cn("p-0 m-0",className)}>
     <CardHeader className="p-2"> 
     <CardTitle className="flex justify-center font-normal pb-2 border-b-2">{title}</CardTitle>
-     
+    <CardDescription>{description}</CardDescription>
     </CardHeader>
     <CardContent className="sm:p-2 p-0">
      {content}

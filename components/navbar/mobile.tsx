@@ -84,10 +84,12 @@ const Mobile = () => {
     //===============================
      <div >
     <Sheet >
+
   <SheetTrigger ><Icons.logo className ="sm:hidden mr-3"/></SheetTrigger>
   <SheetContent className ="md:hidden mr-3" > 
+  <SheetTitle>Menu</SheetTitle>
   <div className="flex flex-1 w-full max-w-10">
-<NavigationMenu className="flex flex-col">
+<NavigationMenu className="flex flex-col" >
   <NavigationMenuList >
 <div className="flex flex-col min-h-full space-y-10">
   <div className="flex justify-center mt-8 w-[80%] space-x-16">
@@ -108,7 +110,7 @@ const Mobile = () => {
             itm.items.map(opt=>(
               <Link href={opt.href} className=" hover:bg-gray-100 rounded-md space-y-40"
               key={opt.id}>
-                 <NavigationMenuLink><SheetTrigger >
+                 <NavigationMenuLink asChild><SheetTrigger >
                 <div className="mb-3 flex pl-2 text-[16px]">
                 <span className='mr-3 pt-1'>{opt.icon}</span>
                 <span className="block pt-1">{opt.option}</span>

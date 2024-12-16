@@ -87,11 +87,10 @@ const Navigation_menu = () => {
               
               
               <Link href={opt.href} className="rounded-md" key={opt.id}>
-                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <div className="mb-3 flex pl-2 text-[16px]">
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),"")} asChild> 
+                <div className="mb-0 p-0 text-[16px]">
                 <span className='mr-3 pt-1'>{opt.icon}</span>
                 <span className="block pt-1">{opt.option}</span>
-              
                 </div>      
                 </NavigationMenuLink>
                </Link>
