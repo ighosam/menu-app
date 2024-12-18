@@ -11,14 +11,14 @@ import { Displaylist } from "@/components/displaylist";
 
 export default async function Home() {
   return (
-    <div className="bg-background">
+    <div className="">
     <section className="m-auto justify-items-center">
-    <Wrapper className="w-[80%]">
+    <Wrapper className="w-[90vw]">
       <div className="lg:flex w-full lg:flex-row flex-col">
-        <div className="w-[20%] mt-0 mr-20 lg:block hidden">
+        <div className="w-[20%] mt-0 mr-2 lg:block hidden">
        <SearchForm  />   
         </div>
-        <div className="w-[60%] ml-0">
+        <div className="w-[70vw] justify-center">
           <Displaylist />
           </div>    
 </div>
