@@ -15,7 +15,7 @@ export default async function Home() {
     <section className="m-auto justify-items-center">
     <Wrapper className="w-[90vw]">
       <div className="lg:flex w-full lg:flex-row flex-col">
-        <div className="w-[20%] mt-0 mr-2 lg:block hidden">
+        <div className="w-[20%] mt-0 mr-2 lg:block">
        <SearchForm  />   
         </div>
         <div className="w-[70vw] justify-center">

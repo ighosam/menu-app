@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 const qsearch= [
   {
     title:"Toyota Corrola 1999 AWD",
-    img:<img src='../mycar3.png' className="hover:scale-105  w-[200px] min-w-[130px]"/>,
+    img:<img src='../mycar3.png' className="hover:scale-105  w-[300px] min-w-[300px]"/>,
     className: "",
     link:'/',
     price:60000,
@@ -23,7 +23,7 @@ const qsearch= [
   },
   {
     title:"Toyota Venza 2014 AWD",
-    img:<img src='../mycar3.png' className="hover:scale-105 w-[200px] min-w-[130px]"/>,
+    img:<img src='../mycar3.png' className="hover:scale-105 w-[300px] min-w-[300px]"/>,
     className: "",
     link:'/',
     price:21000,
@@ -38,7 +38,7 @@ const qsearch= [
   },
   {
     title:"Toyota Hylander 2021 4X4",
-    img:<img src='../mycar3.png' className="hover:scale-105  w-[200px] min-w-[130px]"/>,
+    img:<img src='../mycar3.png' className="hover:scale-105  w-[300px] min-w-[300px]"/>,
     className: "",
     link:'/',
     price:48000,
@@ -52,7 +52,7 @@ const qsearch= [
   },
   {
     title:"Acura Legend 1991 FWD",
-    img:<img src='../mycar3.png' className="hover:scale-105 w-[200px] min-w-[130px]"/>,
+    img:<img src='../mycar3.png' className="hover:scale-105 w-[300px] min-w-[300px]"/>,
     className: "",
     link:'/',
     price:12000,
@@ -67,7 +67,7 @@ const qsearch= [
   },
   {
     title:"Telsla model y 2023 FWD",
-    img:<img src='../mycar3.png' className="hover:scale-105 w-[200px] min-w-[130px]"/>,
+    img:<img src='../mycar3.png' className="hover:scale-105 w-[300px] min-w-[300px]"/>,
     className: "",
     link:'/',
     price:76000.00,
@@ -81,7 +81,7 @@ const qsearch= [
   },
   {
     title:"Dodge Caravan FWD",
-    img:<img src='../mycar3.png' className="hover:scale-105 w-[200px] min-w-[130px]"/>,
+    img:<img src='../mycar3.png' className="hover:scale-105 w-[300px] min-w-[300px]"/>,
     className: "",
     link:'/',
     price:7000,
@@ -95,7 +95,7 @@ const qsearch= [
   },
   {
     title:"Audi quattro A4 2010 AWD",
-    img:<img src='../mycar3.png' className="hover:scale-105 w-[200px] min-w-[130px]"/>,
+    img:<img src='../mycar3.png' className="hover:scale-105 w-[300px] min-w-[300px]"/>,
     className: "",
     link:'/',
     price:11000,
@@ -109,7 +109,7 @@ const qsearch= [
   },
   {
     title:"Toyota Camry 2021 FWD",
-    img:<img src='../mycar3.png'className="hover:scale-105 w-[200px] min-w-[130px]"/>,
+    img:<img src='../mycar3.png'className="hover:scale-105 w-[300px] min-w-[300px]"/>,
     className: "",
     link:'/',
     price:11000.00,

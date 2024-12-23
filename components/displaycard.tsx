@@ -31,27 +31,26 @@ import {
   }) => {
     const nf = new Intl.NumberFormat();
     return (
-      <div className={cn("",className)}>
+      <div className={cn("max-w-[300px]",className)}>
     <Link href={link}>
-      <Card className={cn("p-0 m-0 flex")}>
+      <Card className={cn("p-0 m-0 flex flex-col")}>
       <CardContent className="sm:p-2 p-0">
       {content} 
       </CardContent>
-      <CardHeader className="p-2"> 
-        <div></div>
+   <CardHeader className="p-2"> 
       <CardTitle className="flex justify-center pb-2 border-b-2
       font-bold
       ">
         {title}
         </CardTitle>
-      <div>
+        </CardHeader>
+      <div className="ml-3">
         <h6><span className="inline-block mr-2"><SlSpeedometer /></span>{`${nf.format(mileage)} km`}</h6>
         <h6><span className="inline-block mr-2"><ImLocation /></span>{location}</h6>
-      </div>
+     
       <div className="font-bold text-2xl ">{`\$${nf.format(price)}`}</div>
-      
       <CardDescription>{description}</CardDescription>
-      </CardHeader>
+       </div>
       
     </Card></Link>
     </div>
